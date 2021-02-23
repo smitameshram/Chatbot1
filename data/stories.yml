@@ -1,0 +1,57 @@
+version: "2.0"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: hello world path
+  steps:
+  - intent: hello_world
+  - action: action_hello_world
+
+- story: search restaurant
+  steps:
+  - intent: search_restaurant
+  - action: action_search_restaurant
+
+- story: corona tracker path
+  steps:
+  - intent: corona_state
+  - action: action_corona_tracker
+
+- story: name path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: name_entry
+  - action: utter_entry_country
+  - intent: country_entry
+  - action: utter_show_name_country
+  - action: action_country_prime
+  - action: utter_show_name_country_leader
+  - action: utter_goodbye
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye

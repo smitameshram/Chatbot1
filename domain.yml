@@ -1,0 +1,91 @@
+version: "2.0"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - hello_world
+  - search_restaurant
+  - corona_state
+  - name_entry
+  - country_entry
+
+actions:
+  - action_hello_world
+  - action_search_restaurant
+  - action_corona_tracker
+  - action_country_prime
+  
+  
+entities:
+  - hotel
+  - state
+  - name
+  - country
+  
+
+slots:
+  name:
+    type: text
+  country:
+    type: text
+  leader: 
+    type: text
+
+
+responses:
+  utter_greet:
+  - text: "Please enter your name"
+  
+  # utter_ask_name:
+  # - text: "Your name please?"
+
+  utter_thanks:
+    - text: Thanks for providing the values.
+  
+  utter_submit:
+  - text: "All done!"
+
+  utter_ask_feedback:
+  - text: "Please give your feedback"
+
+  utter_slots_values:
+  - text: "I am going to take PhD request with:
+            - name: {name}\n
+            - ssn: {ssn}\n
+            -subject: {subject}"
+
+  utter_entry_country:
+  - text: "Please enter your country name"
+
+  utter_show_name_country:
+  - text: "Your name is {name} and your country is {country}"
+
+  utter_show_name_country_leader:
+  - text: "Your name is {name} and your country is {country} and leader is {leader}"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+
